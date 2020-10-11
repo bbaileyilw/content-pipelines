@@ -13,13 +13,13 @@ pipeline{
         }
         stage('Clone code from Git repository and setup python env'){
             steps{
-                sh 'git clone https://github.com/linuxacademy/content-pipelines-cje-labs.git'
-                sh 'pip install -r content-pipelines-cje-labs/lab3_lab4/dog_pics_downloader/requirements.txt'
+                sh 'git clone https://github.com/vinodhmahendra/content-pipelines.git'
+                sh 'pip install -r content-pipelines-cje/lab3_lab4/dog_pics_downloader/requirements.txt'
             }
         }
         stage('test code'){
             steps{
-                sh 'python content-pipelines-cje-labs/lab3_lab4/dog_pics_downloader/dog_pic_get_class.py'
+                sh 'python content-pipelines/lab3_lab4/dog_pics_downloader/dog_pic_get_class.py'
             }
         }
     }
@@ -35,7 +35,7 @@ pipeline{
         }
         cleanup{
                 echo 'Cleaning up environment'
-                sh 'rm -rf content-pipelines-cje-labs'
+                sh 'rm -rf content-pipelines'
         }
     }
 }
