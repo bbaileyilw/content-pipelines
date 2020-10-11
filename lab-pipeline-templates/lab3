@@ -14,7 +14,7 @@ pipeline{
         stage('Clone code from Git repository and setup python env'){
             steps{
                 sh 'git clone https://github.com/vinodhmahendra/content-pipelines.git'
-                sh 'pip install -r content-pipelines-cje/lab3_lab4/dog_pics_downloader/requirements.txt'
+                sh 'pip install -r content-pipelines/lab3_lab4/dog_pics_downloader/requirements.txt'
             }
         }
         stage('test code'){
